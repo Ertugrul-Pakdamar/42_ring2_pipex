@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:33:24 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 12:36:09 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:26:42 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ static void	ft_child1(t_vars *vars, char **argv, int *fd)
 	close(fd[0]);
 	close(fd[1]);
 	cmd1 = ft_split(argv[2], ' ');
-	if (!cmd1)
+	if (!cmd1 || !cmd1[0])
+	{
+		ft_free_split(cmd1);
 		ft_exit_prog(vars, -4);
+	}
 	execve(vars->adress1, cmd1, vars->env);
 	ft_free_split(cmd1);
 	ft_exit_prog(vars, -7);
@@ -37,8 +40,11 @@ static void	ft_child2(t_vars *vars, char **argv, int *fd)
 	close(fd[0]);
 	close(fd[1]);
 	cmd2 = ft_split(argv[3], ' ');
-	if (!cmd2)
+	if (!cmd2 || !cmd2[0])
+	{
+		ft_free_split(cmd2);
 		ft_exit_prog(vars, -4);
+	}
 	execve(vars->adress2, cmd2, vars->env);
 	ft_free_split(cmd2);
 	ft_exit_prog(vars, -8);

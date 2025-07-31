@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 09:51:48 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 12:19:38 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/07/31 13:02:44 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_vars
 	int		infd;
 }			t_vars;
 
-char		**ft_init_env(char **envp);
+char		**ft_init_env(char **envp, t_vars *vars);
 void		ft_exit_prog(t_vars *vars, int code);
 void		ft_is_input_valid(int argc, char **argv);
 void		ft_is_programs_valid(char **argv, t_vars *vars);
