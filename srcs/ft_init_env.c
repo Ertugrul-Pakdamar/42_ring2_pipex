@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pipex.h                                         :+:      :+:    :+:   */
+/*   ft_init_env.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 09:51:48 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 10:21:02 by epakdama         ###   ########.fr       */
+/*   Created: 2025/07/31 10:12:44 by epakdama          #+#    #+#             */
+/*   Updated: 2025/07/31 10:17:10 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PIPEX_H
-# define FT_PIPEX_H
+#include "ft_pipex.h"
 
-# include "ft_printf.h"
-# include "get_next_line_bonus.h"
-# include "libft.h"
-# include <fcntl.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <sys/wait.h>
-# include <unistd.h>
+char	**ft_init_env(char **envp)
+{
+	char	**res;
+	int		i;
 
-char	**ft_init_env(char **envp);
-void	ft_exit_prog(char **envp, int code);
-
-#endif
+	i = 0;
+	while (envp[i])
+	{
+		if (ft_strncmp(envp[i], "PATH", 4) == 0)
+		{
+			res = ft_split(ft_strchr(envp[i], '=') + 1, ':');
+			break ;
+		}
+		i++;
+	}
+	return (res);
+}

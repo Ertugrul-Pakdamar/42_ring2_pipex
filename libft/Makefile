@@ -56,20 +56,17 @@ SET_DEF=\033[0m
 all: $(NAME)
 
 $(NAME): $(OBJS) $(BONUS_OBJS)
-	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS) && \
-	echo "${GREEN}libft: Compilation and linking successful!${SET_DEF}"
+	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJS) $(BONUS_OBJS)
-	@echo "${GREEN}libft: Cleaning Completed.${SET_DEF}"
 
 fclean:
 	@rm -f $(OBJS) $(BONUS_OBJS)
 	@rm -f $(NAME)
-	@echo "${GREEN}libft: Removing Completed.${SET_DEF}"
 
 re: fclean all
 

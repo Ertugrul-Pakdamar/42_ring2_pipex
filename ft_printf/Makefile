@@ -1,6 +1,3 @@
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-
 NAME = libftprintf.a
 SRCS = ft_printf.c \
 	ft_putstr.c \
@@ -18,14 +15,14 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@echo "$(GREEN)ft_printf: libftprintf.a created successfully$(SET_DEF)"
+
+$(OBJS): $(SRCS)
+	@cc -Wall -Wextra -Werror $(SRCS) -c -o $(OBJS)
 
 clean:
 	@rm -rf $(OBJS)
-	@echo "$(GREEN)ft_printf: object files removed$(SET_DEF)"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "$(GREEN)ft_printf: libftprintf.a removed$(SET_DEF)"
 
 re: fclean all
