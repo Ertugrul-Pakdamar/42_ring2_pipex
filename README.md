@@ -5,8 +5,6 @@ This project aims to recreate the functionality of shell pipes (`|`) in C. It ha
 ---
 > 🚧 **Status:** In Progress
 
-> ✅ **Status:** Completed
-
 ## ⭐ Features
 This project aims to recreate the functionality of shell pipes (`|`) in C. It handles the redirection of standard input and output between multiple processes, similar to how the shell processes the command `< infile cmd1 | cmd2 > outfile`.
 
