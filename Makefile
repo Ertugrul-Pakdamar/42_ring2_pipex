@@ -2,20 +2,24 @@ NAME = pipex
 LIBS = libft/libft.a ft_printf/libftprintf.a
 
 SRC = ft_main.c \
-	srcs/* \
-	get_next_line/* \
+		srcs/* \
+		get_next_line/*.c 
 
+LIB_SRC = libft/*.c \
+		ft_printf/*.c 
 
 GREEN=\033[0;32m
 SET_DEF=\033[0m
 
-all: $(NAME)
+all: $(LIBS) $(NAME)
 
-$(NAME): $(SRC)
-	@make -C libft
-	@make -C ft_printf
+$(NAME): $(LIBS) $(SRC)
 	@cc -Wall -Wextra -Werror $(SRC) $(LIBS) -o $(NAME) -Ilibft -Ift_printf -Iget_next_line -Iincludes
 	@echo "$(GREEN)Project Compiled Successfully$(SET_DEF)"
+
+$(LIBS): $(LIB_SRC)
+	@make -C libft
+	@make -C ft_printf
 
 clean:
 	@make clean -C libft
