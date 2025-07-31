@@ -5,7 +5,6 @@ This project aims to recreate the functionality of shell pipes (`|`) in C. It ha
 ---
 > 🚧 **Status:** In Progress
 
----
 > ✅ **Status:** Completed
 
 ## ⭐ Features
