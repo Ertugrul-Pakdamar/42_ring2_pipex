@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:35:02 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 13:28:35 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/07/31 14:56:34 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@ void	ft_is_input_valid(int argc, char **argv)
 		ft_exit_prog(NULL, -4);
 	if (!argv[2] || !argv[2][0] || !argv[3] || !argv[3][0])
 		ft_exit_prog(NULL, -3);
-}
-
-static void	ft_program_not_found(t_vars *vars, int res1, int res2)
-{
-	if (!res1 || !res2)
-		ft_exit_prog(vars, -6);
 }
 
 static void	ft_check_path(t_vars *vars, char **argv, int *res, int type)
@@ -65,5 +59,6 @@ void	ft_is_programs_valid(char **argv, t_vars *vars)
 	ft_check_path(vars, argv, &res1, 1);
 	res2 = 0;
 	ft_check_path(vars, argv, &res2, 2);
-	ft_program_not_found(vars, res1, res2);
+	if (!res1 || !res2)
+		ft_exit_prog(vars, -6);
 }
