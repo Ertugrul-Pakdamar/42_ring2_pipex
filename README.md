@@ -1,9 +1,15 @@
-# Pipex
+# 🔄 Pipex
 
 This project aims to recreate the functionality of shell pipes (`|`) in C. It handles the redirection of standard input and output between multiple processes, similar to how the shell processes the command `< infile cmd1 | cmd2 > outfile`.
 
 ---
-> 🚧 **Status:** Completed
+> 🚧 **Status:** In Progress
+
+---
+> ✅ **Status:** Completed
+
+## ⭐ Features
+This project aims to recreate the functionality of shell pipes (`|`) in C. It handles the redirection of standard input and output between multiple processes, similar to how the shell processes the command `< infile cmd1 | cmd2 > outfile`.
 
 ## Features
 
@@ -13,7 +19,7 @@ This project aims to recreate the functionality of shell pipes (`|`) in C. It ha
 - Proper error handling and memory management
 - Environment variable path resolution for commands
 
-## Installation
+## 🛠️ Installation
 
 ```bash
 git clone https://github.com/Ertugrul-Pakdamar/42_ring2_pipex.git
@@ -21,7 +27,7 @@ cd pipex
 make
 ```
 
-## Usage
+## 📖 Usage
 
 ```bash
 ./pipex infile "cmd1" "cmd2" outfile
@@ -34,7 +40,7 @@ make
 ```
 This is equivalent to: `< infile ls -l | wc -l > outfile`
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 .
@@ -50,7 +56,7 @@ This is equivalent to: `< infile ls -l | wc -l > outfile`
     └── ft_validations.c   # Input validation
 ```
 
-## Error Handling
+## ⚠️ Error Handling
 
 The program handles various error cases:
 - Invalid number of arguments
@@ -60,7 +66,7 @@ The program handles various error cases:
 - Pipe creation errors
 - Fork failures
 
-## Technical Details
+## 🔧 Technical Details
 
 - Uses Unix system calls: pipe(), fork(), dup2(), execve()
 - Implements proper memory management
@@ -68,7 +74,7 @@ The program handles various error cases:
 - Process creation and management
 - File descriptor manipulation
 
-## Building
+## 🏗️ Building
 
 The project includes a Makefile with the following rules:
 - `make`: Compiles the project
