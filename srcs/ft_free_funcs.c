@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:19:06 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 12:19:34 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:32:53 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	ft_exit_outs(int code)
 	if (code == -5)
 		ft_printf("Outfile permission denied or not found\n");
 	if (code == -6)
-		ft_printf("program not found\n");
+		ft_printf("Program not found\n");
 	if (code == -7)
 		ft_printf("Error executing first command\n");
 	if (code == -8)
@@ -42,15 +42,9 @@ static void	ft_exit_outs(int code)
 
 void	ft_exit_prog(t_vars *vars, int code)
 {
-	int	i;
-
 	if (vars)
 	{
-		i = 0;
-		while (vars->env[i])
-			free(vars->env[i++]);
-		if (vars->env)
-			free(vars->env);
+		ft_free_split(vars->env);
 		if (vars->adress1)
 			free(vars->adress1);
 		if (vars->adress2)
