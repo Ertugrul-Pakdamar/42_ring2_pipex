@@ -17,7 +17,7 @@ $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
 $(OBJS): $(SRCS)
-	@cc -Wall -Wextra -Werror $(SRCS) -c -o $(OBJS)
+	@cc -Wall -Wextra -Werror -c $(SRCS)
 
 clean:
 	@rm -rf $(OBJS)

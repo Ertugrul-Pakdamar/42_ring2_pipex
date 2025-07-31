@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:12:44 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 10:17:10 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/07/31 10:57:12 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ char	**ft_init_env(char **envp)
 		if (ft_strncmp(envp[i], "PATH", 4) == 0)
 		{
 			res = ft_split(ft_strchr(envp[i], '=') + 1, ':');
+			i = -1;
+			while (res[++i])
+				res[i] = ft_strjoin(res[i], "/");
 			break ;
 		}
 		i++;

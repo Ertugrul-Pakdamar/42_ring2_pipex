@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 10:12:43 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/07 09:26:46 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/07/31 12:00:43 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ char	*ft_strjoin(char *s1, char const *s2)
 	index1 = -1;
 	while (s1[++index1])
 		res[index1] = s1[index1];
-	index2 = -1;
-	while (s2[++index2])
-		res[index1++] = s2[index2];
+	index2 = 0;
+	while (s2[index2] && s2[index2] != ' ')
+		res[index1++] = s2[index2++];
 	res[index1] = '\0';
 	return (res);
 }
