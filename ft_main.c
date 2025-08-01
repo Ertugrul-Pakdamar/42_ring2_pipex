@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 09:52:08 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 13:24:58 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/08/01 12:04:00 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,5 @@ int	main(int argc, char **argv, char **envp)
 	vars->outfd = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	vars->infd = open(argv[1], O_RDONLY);
 	ft_pipex(vars, argv);
-	if (waitpid(-1, NULL, 0) == -1)
-		ft_exit_prog(vars, -1);
 	ft_exit_prog(vars, 0);
 }
