@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 09:52:08 by epakdama          #+#    #+#             */
-/*   Updated: 2025/08/01 12:19:29 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/08/01 13:53:51 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	main(int argc, char **argv, char **envp)
 	t_vars	*vars;
 
 	ft_is_input_valid(argc, argv);
+	if (ft_strncmp(argv[4], "", 1) == 0)
+		ft_exit_prog(NULL, -3);
 	vars = (t_vars *)malloc(sizeof(t_vars));
 	if (!vars)
 		ft_exit_prog(NULL, -1);
