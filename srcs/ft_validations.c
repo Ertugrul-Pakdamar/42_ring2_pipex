@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:35:02 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 14:56:34 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/08/01 12:19:04 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ static void	ft_check_path(t_vars *vars, char **argv, int *res, int type)
 	int		i;
 
 	i = -1;
-	while (vars->env[++i])
+	while (vars->path[++i])
 	{
 		if (*res == 0)
 		{
 			if (type == 1)
-				temp = ft_strjoin(vars->env[i], argv[2]);
+				temp = ft_strjoin(ft_strjoin(vars->path[i], "/"), argv[2]);
 			if (type == 2)
-				temp = ft_strjoin(vars->env[i], argv[3]);
+				temp = ft_strjoin(ft_strjoin(vars->path[i], "/"), argv[3]);
 			if (access(temp, X_OK) == 0)
 			{
 				if (type == 1)

@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 09:51:48 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 15:12:38 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/08/01 12:19:10 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 
 typedef struct s_vars
 {
-	char	**env;
+	char	**path;
+	char	**envp;
 	char	*adress1;
 	char	*adress2;
 	int		outfd;

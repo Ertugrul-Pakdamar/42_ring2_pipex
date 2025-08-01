@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:19:06 by epakdama          #+#    #+#             */
-/*   Updated: 2025/07/31 13:22:00 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/08/01 12:19:04 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_exit_prog(t_vars *vars, int code)
 {
 	if (vars != NULL)
 	{
-		ft_free_split(vars->env);
+		ft_free_split(vars->path);
 		if (vars->adress1 != NULL)
 			free(vars->adress1);
 		if (vars->adress2 != NULL)
