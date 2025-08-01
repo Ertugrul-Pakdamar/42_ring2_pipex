@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:19:06 by epakdama          #+#    #+#             */
-/*   Updated: 2025/08/01 12:19:04 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/08/01 15:21:14 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ static void	ft_exit_outs(int code)
 	if (code == -6)
 		ft_printf("Program not found\n");
 	if (code == -7)
-		ft_printf("Error executing first command\n");
+		write(2, "Error executing first command\n", 31);
 	if (code == -8)
-		ft_printf("Error executing second command\n");
+		write(2, "Error executing second command\n", 31);
 }
 
 void	ft_exit_prog(t_vars *vars, int code)
