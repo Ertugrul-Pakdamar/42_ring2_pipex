@@ -6,7 +6,7 @@
 /*   By: epakdama <epakdama@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 10:35:02 by epakdama          #+#    #+#             */
-/*   Updated: 2025/08/01 12:19:04 by epakdama         ###   ########.fr       */
+/*   Updated: 2025/08/01 12:45:56 by epakdama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@ void	ft_is_input_valid(int argc, char **argv)
 		ft_exit_prog(NULL, -3);
 }
 
+static void	ft_set_adress(t_vars *vars, char *temp, int type, int *res)
+{
+	if (type == 1)
+		vars->adress1 = temp;
+	else if (type == 2)
+		vars->adress2 = temp;
+	*res = 1;
+}
+
 static void	ft_check_path(t_vars *vars, char **argv, int *res, int type)
 {
 	char	*temp;
@@ -33,17 +42,13 @@ static void	ft_check_path(t_vars *vars, char **argv, int *res, int type)
 		if (*res == 0)
 		{
 			if (type == 1)
-				temp = ft_strjoin(ft_strjoin(vars->path[i], "/"), argv[2]);
+				temp = ft_strjoin_custom(ft_strjoin(vars->path[i], "/"),
+						argv[2]);
 			if (type == 2)
-				temp = ft_strjoin(ft_strjoin(vars->path[i], "/"), argv[3]);
+				temp = ft_strjoin_custom(ft_strjoin(vars->path[i], "/"),
+						argv[3]);
 			if (access(temp, X_OK) == 0)
-			{
-				if (type == 1)
-					vars->adress1 = temp;
-				else if (type == 2)
-					vars->adress2 = temp;
-				*res = 1;
-			}
+				ft_set_adress(vars, temp, type, res);
 			else
 				free(temp);
 		}
