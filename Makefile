@@ -2,8 +2,7 @@ NAME = pipex
 LIBS = libft/libft.a ft_printf/libftprintf.a
 
 SRC = ft_main.c \
-		srcs/* \
-		get_next_line/*.c 
+		srcs/*
 
 LIB_SRC = libft/*.c \
 		ft_printf/*.c 
